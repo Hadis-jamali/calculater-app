@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Calculator.css";
 function Calculator() {
-  let [result, setResult] = useState("");
-  let clickHandler = (e) => {
+  const [result, setResult] = useState("");
+  const clickHandler = (e) => {
     let input = e.target.innerText;
     if (input === "." && result.includes(".")) return;
     setResult(result + input);
