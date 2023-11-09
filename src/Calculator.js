@@ -13,6 +13,9 @@ function Calculator() {
   const backSpaceBtn = () => {
     setResult(result.slice(0, -1));
   };
+  const equalBtn = () => {
+    setResult(eval(result).toString());
+  };
   return (
     <div className="container">
       <div className="screen">{result}</div>
@@ -46,7 +49,7 @@ function Calculator() {
         </button>
         <button onClick={clickHandler}>0</button>
         <button onClick={clickHandler}>.</button>
-        <button onClick={clickHandler} className="color twocol">
+        <button onClick={equalBtn} className="color twocol">
           =
         </button>
       </div>
