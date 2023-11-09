@@ -4,16 +4,25 @@ function Calculator() {
   let [result, setResult] = useState("");
   let clickHandler = (e) => {
     let input = e.target.innerText;
-    if (input == "." && result.includes(".")) return;
+    if (input === "." && result.includes(".")) return;
     setResult(result + input);
   };
-
+  const clearBtn = () => {
+    setResult("");
+  };
+  const backSpaceBtn = () => {
+    setResult(result.slice(0, -1));
+  };
   return (
     <div className="container">
       <div className="screen">{result}</div>
       <div className="buttons">
-        <button className="color twocol">Clear</button>
-        <button className="color">C</button>
+        <button onClick={clearBtn} className="color twocol">
+          Clear
+        </button>
+        <button onClick={backSpaceBtn} className="color">
+          C
+        </button>
         <button onClick={clickHandler} className="color">
           ÷
         </button>
