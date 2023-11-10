@@ -7,6 +7,7 @@ function Calculator() {
     if (input === "." && result.includes(".")) return;
     setResult(result + input);
   };
+
   const clearBtn = () => {
     setResult("");
   };
@@ -52,6 +53,7 @@ function Calculator() {
         <button onClick={equalBtn} className="color twocol">
           =
         </button>
+        {/* <button onClick={equalBtn} className="color twocol"></button> */}
       </div>
     </div>
   );
